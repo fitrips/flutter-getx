@@ -41,6 +41,13 @@ class HomeView extends GetView<HomeController> {
                 Get.toNamed('/biodata');
               },
                child: Text("Pindah ke Biodata"),
+               ),
+                SizedBox(height: 10),
+                ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/latihan');
+              },
+               child: Text("Pindah ke Latihan"),
                )
           ],
         ),
