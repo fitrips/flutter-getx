@@ -174,7 +174,7 @@ class LatihanView extends StatelessWidget {
     }
   }
 }
-               
+
                if (latihanController.payment.value.isNotEmpty) {
                 output += '\nCard Number: ${latihanController.cardNumber.value}\n';
                 output += 'Expired Date: ${latihanController.expiredDate.value}\n';

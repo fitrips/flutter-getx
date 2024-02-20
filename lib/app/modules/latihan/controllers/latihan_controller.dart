@@ -78,14 +78,7 @@ class LatihanController extends GetxController {
       totalPrice = 500000;
     }
 
-    int membershipDuration = 0;
-    if (isRegulerMember.value || isGoldMember.value) {
-      membershipDuration = 1;
-    } else if (isPlatinumMember.value) {
-      membershipDuration = 2; 
-    } else if (isVipMember.value) {
-      membershipDuration = 3; 
-    }
+   
 
       DateTime parsedDate = DateTime.now();
       DateTime newExpiredDate = parsedDate.add(Duration(days: 7));
@@ -99,7 +92,6 @@ class LatihanController extends GetxController {
     int change = paymentAmount - totalPrice;
 
     String output = 'Total Price: $totalPrice\n';
-    output += 'Membership Duration: $membershipDuration bulan\n';
     output += 'Change: $change';
 
     print(output);
