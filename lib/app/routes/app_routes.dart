@@ -8,13 +8,23 @@ abstract class Routes {
   static const COUNTER = _Paths.COUNTER;
   static const BIODATA = _Paths.BIODATA;
   static const LATIHAN = _Paths.LATIHAN;
+  static const LOGIN = _Paths.LOGIN;
+  static const REGISTER = _Paths.REGISTER;
+  static const USERS = _Paths.USERS;
+  static const EMPLOYE = _Paths.EMPLOYE;
+  static const KATEGORI = _Paths.KATEGORI;
 }
+ abstract class _Paths {
 
-abstract class _Paths {
-  _Paths._();
+  _Paths._(); 
   static const HOME = '/home';
   static const PROFILE = '/profile';
   static const COUNTER = '/counter';
   static const BIODATA = '/biodata';
   static const LATIHAN = '/latihan';
+  static const LOGIN = '/login';
+  static const REGISTER = '/register';
+  static const USERS = '/users';
+  static const EMPLOYE = '/employe';
+  static const KATEGORI = '/kategori';
 }

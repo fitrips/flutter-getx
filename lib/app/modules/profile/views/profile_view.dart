@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/profile_controller.dart';
 
-class ProfileView extends GetView<ProfileController> {
+class ProfileView extends GetView<ProfilController> {
   const ProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -12,20 +13,40 @@ class ProfileView extends GetView<ProfileController> {
       appBar: AppBar(
         title: const Text('ProfileView'),
         centerTitle: true,
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'ProfileView is working',
-              style: TextStyle(fontSize: 20),
-            ),
-            Text("Fitri"),
-            Text("fit@gmail.com"),
-          ],
+        actions: [
+          IconButton(
+          icon: Icon(Icons.logout),
+          onPressed: () => controller.logout(),
         ),
+        ],
       ),
+      body: Obx(
+        () => controller.isLoading.value
+        ? Center(child: CircularProgressIndicator())
+        : Padding (
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 8,),
+              Text(
+                'Nama: ${controller.user['name']}',
+                style: TextStyle(fontSize: 18),
+              ),
+               SizedBox(height: 8,),
+              Text(
+                'email: ${controller.user['email']}',
+                style: TextStyle(fontSize: 18),
+              ),
+               SizedBox(height: 8,),
+              Text(
+                'role: ${controller.user['role']}',
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
+        )
+        ),
     );
   }
 }
